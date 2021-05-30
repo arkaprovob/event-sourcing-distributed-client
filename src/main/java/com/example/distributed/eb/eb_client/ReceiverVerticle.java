@@ -13,7 +13,7 @@ public class ReceiverVerticle extends AbstractVerticle {
   @Override
   public void start() {
     final EventBus eventBus = vertx.eventBus();
-    eventBus.consumer("event_source", receivedMessage -> logger.info("Received message: {}"+receivedMessage.body()));
+    eventBus.consumer("event_source", receivedMessage -> logger.info("Received message: "+receivedMessage.body()));
     logger.info("Receiver ready!");
   }
 }
