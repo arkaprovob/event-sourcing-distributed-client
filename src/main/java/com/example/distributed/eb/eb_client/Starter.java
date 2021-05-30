@@ -12,7 +12,7 @@ public class Starter {
   private static final Logger logger = LoggerFactory.getLogger(ReceiverVerticle.class);
 
   public static void main(String[] args){
-    final ClusterManager mgr = new HazelcastClusterManager(ClusterConfiguratorHelper.getHazelcastConfiguration());
+    final ClusterManager mgr = new HazelcastClusterManager();
     final VertxOptions options = new VertxOptions().setClusterManager(mgr);
     Vertx.clusteredVertx(options, cluster -> {
       if (cluster.succeeded()) {
